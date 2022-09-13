@@ -41,3 +41,5 @@ const ListItem = ({ note }) => {
         </Link>
     )
 }
+
+export default ListItem
