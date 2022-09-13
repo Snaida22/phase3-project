@@ -35,7 +35,7 @@ As a user of the application you will be able to track important information by 
 * Access to the internet
 
 ## Github repo Link
-https://github.com/Snaida22/phase2-project
+https://github.com/Snaida22/phase3-project
 
 ## Live Link
 - Click this link to view the application: https://snynotes.herokuapp.com/
