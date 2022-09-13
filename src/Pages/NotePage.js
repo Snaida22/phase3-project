@@ -20,3 +20,13 @@ function NotePage({history}) {
     
         setNotes(data)
       }
+
+      let createNote = async() => {
+        await fetch(`https://json-server1131.herokuapp.com/notes/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({...notes, 'updated': new Date()})
+    })
+    }
