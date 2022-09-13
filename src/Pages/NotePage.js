@@ -53,3 +53,46 @@ function NotePage({history}) {
         })
       
       }
+
+      let handleSubmit = () => {
+        if(params.id !=='new' && !notes.body){
+         deleteNote()
+         
+        }else if(params.id !=='new'){
+         updateNote()
+        }else if(params.id === 'new' && notes !== null & notes !==''){
+         createNote()
+        }
+        
+       
+       
+       }
+     
+ 
+ return (
+     <div className='note'>
+     <div className='note-header'>
+       <h3>
+       <Link to= '/'>
+         <ArrowLeft onClick={handleSubmit}/>
+       </Link>
+       </h3>
+ 
+       <Link to= '/'>
+     { params.id !=='new' ? (
+       <button onClick={deleteNote}>Delete</button>
+ 
+     ):(
+       <button onClick={handleSubmit}>Done</button>
+     ) }
+ 
+       </Link>
+ 
+     </div>
+ 
+     <textarea onChange={e =>{setNotes({...notes, 'body': e.target.value})}} value={notes.body}></textarea>
+     </div>
+   )
+ }
+ 
+ export default NotePage
