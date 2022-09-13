@@ -12,3 +12,11 @@ function NotePage({history}) {
     useEffect(() =>{
       getNote()
     }, [params.id])
+
+    let getNote = async() =>{
+        if(params.id === 'new') return
+        let response = await fetch(`https://json-server1131.herokuapp.com/notes/${params.id}`)
+        let data = await response.json()
+    
+        setNotes(data)
+      }
