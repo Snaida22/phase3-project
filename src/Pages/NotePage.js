@@ -40,3 +40,16 @@ function NotePage({history}) {
         body: JSON.stringify({...notes, 'updated': new Date()})
     })
     }
+
+    let deleteNote = async() => {
+        await fetch(`https://json-server1131.herokuapp.com/notes/${params.id}`, {
+          method: 'DELETE',
+      
+          headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(notes)
+      
+        })
+      
+      }
