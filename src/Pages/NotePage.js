@@ -17,7 +17,7 @@ function NotePage({history}) {
       if(params.id === 'new') 
       return
       // let response = await fetch(`https://json-server1131.herokuapp.com/notes/${params.id}`)
-      let response = await fetch(`http://localhost:9292/notes/${params.id}`)
+      let response = await fetch(`http://localhost:9292/notes${params.id}`)
       let data = await response.json()
   
       setNotes(data)
@@ -34,7 +34,7 @@ function NotePage({history}) {
     }
 
     let updateNote = async() => {
-        await fetch(`https://json-server1131.herokuapp.com/notes/${params.id}`, {
+        await fetch(`http://localhost:9292/notes${params.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json'
@@ -44,7 +44,7 @@ function NotePage({history}) {
     }
 
     let deleteNote = async() => {
-        await fetch(`https://json-server1131.herokuapp.com/notes/${params.id}`, {
+        await fetch(`http://localhost:9292/notes${params.id}`, {
           method: 'DELETE',
       
           headers: {
