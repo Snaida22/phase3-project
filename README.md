@@ -34,11 +34,12 @@ As a user of the application you will be able to track important information by 
 
 * Access to the internet
 
-## Github repo Link
-https://github.com/Snaida22/phase3-project
+## Github backend repo Link
+https://github.com/Snaida22/phase-3-sinatra-react-project
 
 ## Live Link
 - Click this link to view the application: https://snynotes.herokuapp.com/
+
 
 ## Technology Used
 * HTML - Was used as a template to hold the React components of the app via the root div. CSS styling-which was used to style the User Interface. JS - Java Script is used to make the website interactive. JSX- JavaScript XML allows us to write HTML elements in JavaScript and place them in the DOM .JSX converts HTML tags into react elements. JSON-Was used to create a public API server which was hosted on Heroku. Heroku- Heroku was used to deploy the project's live link. Heroku - Heroku used to create a Json-server API that's hosted online.
