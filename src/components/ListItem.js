@@ -2,14 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 let getTime = (note) => {
-    return new Date(note.updated).toLocaleDateString()
+    return new Date(note.updated1).toLocaleDateString()
 }
 
 let getTitle = (note) => {
     //spit by new lines and just get the first line
     //split will make a list of each line and will only pull on the first line by index zero
 
-    const title = note.body.split('\n')[0]
+    const title = note.name.split('\n')[0]
     if (title.length > 45) {
         return title.slice(0, 45)
     }
@@ -19,7 +19,7 @@ let getTitle = (note) => {
 let getContent = (note) => {
     //Get content after title
     let title = getTitle(note)
-    let content = note.body.replaceAll('\n', '')
+    let content = note.name.replaceAll('\n', '')
     content = content.replaceAll(title, '')
 
     //Slice content and add three dots in over 45 characters to show there is more

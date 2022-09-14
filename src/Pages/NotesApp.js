@@ -14,7 +14,7 @@ useEffect(() => {
 let [notes, setNotes] = useState([])
 
 let getNotes = async() => {
-let response = await fetch('https://json-server1131.herokuapp.com/notes')
+let response = await fetch('http://localhost:9292/notes')
 let data = await response.json()
 
 setNotes(data)

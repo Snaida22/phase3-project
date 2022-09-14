@@ -14,20 +14,22 @@ function NotePage({history}) {
     }, [params.id])
 
     let getNote = async() =>{
-        if(params.id === 'new') return
-        let response = await fetch('http://localhost:9292/notes/${params.id}`)
-        let data = await response.json()
-    
-        setNotes(data)
-      }
+      if(params.id === 'new') 
+      return
+      // let response = await fetch(`https://json-server1131.herokuapp.com/notes/${params.id}`)
+      let response = await fetch(`http://localhost:9292/notes/${params.id}`)
+      let data = await response.json()
+  
+      setNotes(data)
+    }
 
       let createNote = async() => {
-        await fetch(`https://json-server1131.herokuapp.com/notes/`, {
+        await fetch(`http://localhost:9292/notes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({...notes, 'updated': new Date()})
+        body: JSON.stringify({...notes, 'updated1': new Date()})
     })
     }
 
@@ -55,7 +57,7 @@ function NotePage({history}) {
       }
 
       let handleSubmit = () => {
-        if(params.id !=='new' && !notes.body){
+        if(params.id !=='new' && !notes.name){
          deleteNote()
          
         }else if(params.id !=='new'){
@@ -90,7 +92,7 @@ function NotePage({history}) {
  
      </div>
  
-     <textarea onChange={e =>{setNotes({...notes, 'body': e.target.value})}} value={notes.body}></textarea>
+     <textarea onChange={e =>{setNotes({...notes, 'body': e.target.value})}} value={notes.name}></textarea>
      </div>
    )
  }
